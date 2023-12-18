@@ -10,6 +10,7 @@ submit.addEventListener('click', addTask);
 tasks.addEventListener('click', removeTask);
 clear.addEventListener('click', clearAll);
 filter.addEventListener('keyup', filterTasks);
+document.addEventListener('DOMContentLoaded', loadTasks);
 
 // Our Functions
 // check for input value and create task
@@ -54,6 +55,17 @@ function filterTasks(e) {
       text.style.display = 'none';
     }
   });
+}
+
+// Load Tasks
+function loadTasks(e) {
+  let tasks;
+  if (localStorage.tasks === undefined) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.tasks);
+  }
+  tasks.forEach((task) => createTask(task));
 }
 
 // Store in local storage
