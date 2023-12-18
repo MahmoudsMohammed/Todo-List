@@ -8,7 +8,7 @@ const add = document.getElementById('add'),
 // Event Listeners
 submit.addEventListener('click', addTask);
 tasks.addEventListener('click', removeTask);
-
+clear.addEventListener('click', clearAll);
 // Our Functions
 // check for input value and create task
 function addTask(e) {
@@ -27,6 +27,13 @@ function removeTask(e) {
     if (confirm('Are You Sure ?')) {
       e.target.parentElement.parentElement.remove();
     }
+  }
+}
+
+// Clear All Task List
+function clearAll(e) {
+  while (tasks.firstElementChild) {
+    tasks.firstElementChild.remove();
   }
 }
 
