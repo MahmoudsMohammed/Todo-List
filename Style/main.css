@@ -3,8 +3,7 @@ body {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
@@ -31,4 +30,88 @@ body {
   .container {
     width: 1170px;
   }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.container .add {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.container .add p {
+  font-size: 2rem;
+}
+.container .add form #add {
+  padding: 5px;
+  display: block;
+  width: 100%;
+  caret-color: #26a69a;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid #9E9E9E;
+}
+.container .add form #add:focus {
+  outline: none;
+  border-bottom-color: #26a69a;
+}
+.container .add form #submit {
+  padding: 10px 30px;
+  border: none;
+  background-color: #26a69a;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+}
+.container .result p {
+  font-size: 1.6rem;
+}
+.container .result #filter {
+  padding: 5px;
+  display: block;
+  width: 100%;
+  caret-color: #26a69a;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid #9E9E9E;
+}
+.container .result #filter:focus {
+  outline: none;
+  border-bottom-color: #26a69a;
+}
+.container .result .tasks {
+  list-style: none;
+  padding: 0px;
+  margin: 20px 0px 0px;
+}
+.container .result .tasks li {
+  padding: 15px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+.container .result .tasks li i {
+  color: red;
+}
+.container .result #clear {
+  border: none;
+  padding: 10px 30px;
+  background-color: #000000;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
 }

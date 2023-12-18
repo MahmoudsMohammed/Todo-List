@@ -2,3 +2,95 @@
 @use 'SCSS/helpers' as *;
 @use 'SCSS/variables' as *;
 
+body {
+  @extend %flex-center;
+  height: 100vh;
+}
+
+.container {
+  & {
+    box-shadow: 2px 2px 4px rgba(black, 0.2), -2px -2px 4px rgba(black, 0.2);
+    border-radius: 5px;
+  }
+  .add {
+    & {
+      border-bottom: 1px solid rgba(black, 0.1);
+    }
+    p {
+      font-size: 2rem;
+    }
+    form {
+      #add {
+        & {
+          padding: 5px;
+          display: block;
+          width: 100%;
+          caret-color: $sub-color;
+          font-size: 1.1rem;
+          border: none {
+            bottom: 1px solid $border-color;
+          }
+        }
+        &:focus {
+          outline: none;
+          border-bottom-color: $sub-color;
+        }
+      }
+      #submit {
+        padding: 10px 30px;
+        border: none;
+        background-color: $sub-color;
+        color: white;
+        border-radius: 5px;
+        @include margin-center;
+      }
+    }
+  }
+  .result {
+    p {
+      font-size: 1.6rem;
+    }
+    #filter {
+      & {
+        padding: 5px;
+        display: block;
+        width: 100%;
+        caret-color: $sub-color;
+        font-size: 1.1rem;
+        border: none {
+          bottom: 1px solid $border-color;
+        }
+      }
+      &:focus {
+        outline: none;
+        border-bottom-color: $sub-color;
+      }
+    }
+    .tasks {
+      & {
+        list-style: none;
+        padding: 0px;
+        margin: 20px 0px 0px;
+      }
+      li {
+        & {
+          padding: 15px;
+          border: 1px solid #ccc;
+          display: flex;
+          justify-content: space-between;
+        }
+        i{
+          color: red;
+        }
+      }
+    }
+    #clear {
+      border: none;
+      padding: 10px 30px;
+      background-color: $clear-color;
+      color: white;
+      border-radius: 5px;
+      @include margin-center;
+    }
+  }
+}

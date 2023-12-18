@@ -19,14 +19,17 @@
       <div class="add">
         <p>Task List</p>
         <form action="#">
-          <div><input type="text" name="add" id="add" /></div>
+          <div>
+            <input type="text" name="add" id="add" placeholder="New Task" />
+          </div>
           <input type="submit" value="Add Task" id="submit" />
         </form>
       </div>
       <div class="result">
         <p>Tasks</p>
-        <input type="text" id="filter" />
-        <div class="tasks"></div>
+        <input type="text" id="filter" placeholder="Filter Tasks" />
+        <ul class="tasks">
+        </ul>
         <button id="clear">Clear Tasks</button>
       </div>
     </div>

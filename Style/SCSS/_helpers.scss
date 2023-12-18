@@ -25,9 +25,15 @@
 }
 
 // Placeholder
-%center {
+%flex-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@mixin margin-center {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
 }
