@@ -9,6 +9,8 @@ const add = document.getElementById('add'),
 submit.addEventListener('click', addTask);
 tasks.addEventListener('click', removeTask);
 clear.addEventListener('click', clearAll);
+filter.addEventListener('keyup', filterTasks);
+
 // Our Functions
 // check for input value and create task
 function addTask(e) {
@@ -35,6 +37,22 @@ function clearAll(e) {
   while (tasks.firstElementChild) {
     tasks.firstElementChild.remove();
   }
+}
+
+// Filter tasks
+function filterTasks(e) {
+  let all = Array.from(document.getElementsByTagName('li'));
+  all.forEach((text) => {
+    if (
+      text.textContent
+        .toLocaleLowerCase()
+        .includes(e.target.value.toLocaleLowerCase())
+    ) {
+      text.style.display = 'flex';
+    } else {
+      text.style.display = 'none';
+    }
+  });
 }
 
 // Create Task and Set on List
