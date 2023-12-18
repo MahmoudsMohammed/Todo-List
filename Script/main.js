@@ -30,6 +30,7 @@ function removeTask(e) {
   if (e.target.parentElement.classList.contains('remove')) {
     if (confirm('Are You Sure ?')) {
       e.target.parentElement.parentElement.remove();
+      remove(e.target.parentElement.parentElement.textContent);
     }
   }
 }
@@ -80,6 +81,22 @@ function store(task) {
     tasks.push(task);
     localStorage.tasks = JSON.stringify(tasks);
   }
+}
+
+// Remove From Local storage
+function remove(task) {
+  let tasks;
+  if (localStorage.tasks === undefined) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.tasks);
+  }
+  tasks.forEach((e, i) => {
+    if (e === task) {
+      tasks.splice(i, 1);
+    }
+  });
+  localStorage.tasks = JSON.stringify(tasks);
 }
 
 // Create Task and Set on List
