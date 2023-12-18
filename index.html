@@ -15,7 +15,21 @@
     <title>Todo-List</title>
   </head>
   <body>
-    
+    <div class="container">
+      <div class="add">
+        <p>Task List</p>
+        <form action="#">
+          <div><input type="text" name="add" id="add" /></div>
+          <input type="submit" value="Add Task" id="submit" />
+        </form>
+      </div>
+      <div class="result">
+        <p>Tasks</p>
+        <input type="text" id="filter" />
+        <div class="tasks"></div>
+        <button id="clear">Clear Tasks</button>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
