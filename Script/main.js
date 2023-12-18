@@ -18,6 +18,7 @@ function addTask(e) {
     alert('Add a Task First');
   } else {
     createTask(add.value);
+    store(add.value);
     add.value = '';
   }
   e.preventDefault();
@@ -53,6 +54,20 @@ function filterTasks(e) {
       text.style.display = 'none';
     }
   });
+}
+
+// Store in local storage
+function store(task) {
+  let tasks;
+  if (localStorage.tasks === undefined) {
+    tasks = [];
+    tasks.push(task);
+    localStorage.tasks = JSON.stringify(tasks);
+  } else {
+    tasks = JSON.parse(localStorage.tasks);
+    tasks.push(task);
+    localStorage.tasks = JSON.stringify(tasks);
+  }
 }
 
 // Create Task and Set on List
